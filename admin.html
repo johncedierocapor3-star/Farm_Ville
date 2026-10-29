@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Panel | Farmville Resort</title>
+<script>if(sessionStorage.getItem('farmville_admin')!=='1'){location.replace('admin-login.html');}</script>
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<div class="adm">
+  <aside class="side">
+    <div class="side-brand"><img src="images/farmville-logo.png" alt="FarmVille Logo" style="width:auto;height:44px;max-width:140px;object-fit:contain;border-radius:0;margin-bottom:8px;display:block;"><b>FarmVille</b><span>Admin Panel</span></div>
+    <nav id="side-nav">
+      <button data-view="dashboard">📊 Dashboard</button>
+      <button data-view="bookings">🗓️ Bookings</button>
+      <button data-view="payments">💳 Payments</button>
+      <button data-view="rooms">🛏️ Rooms</button>
+      <button data-view="gallery">🖼️ Gallery</button>
+      <button data-view="users">👥 Guests</button>
+    </nav>
+    <div class="side-foot">
+      <a href="index.html">← View Website</a>
+      <button id="logout">Log out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <button id="admin-drawer-toggle" class="drawer-toggle" aria-label="Toggle navigation drawer">☰</button>
+        <h1 id="view-title">Dashboard</h1>
+      </div>
+      <div class="who">👤 admin</div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section class="view" id="view-dashboard">
+      <div class="stats" id="stats"></div>
+      <div class="empty panel hidden" id="dash-empty">
+        No bookings yet. Bookings appear here after a guest completes payment on the website.
+        <div><button class="btn" id="sample-btn">Add sample bookings</button></div>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h3>Bookings by Room</h3><div id="room-bars"></div></div>
+        <div class="panel"><h3>Recent Bookings</h3>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Ref</th><th>Guest</th><th>Room</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody id="recent-body"></tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKINGS -->
+    <section class="view hidden" id="view-bookings">
+      <div class="toolbar">
+        <input type="text" id="bk-search" placeholder="Search by name, email, ref, or room">
+        <select id="bk-status">
+          <option value="all">All statuses</option><option>Confirmed</option><option>Checked-in</option><option>Completed</option><option>Cancelled</option>
+        </select>
+      </div>
+      <div class="panel"><div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Ref</th><th>Guest</th><th>Room</th><th>Stay</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody id="bk-body"></tbody>
+      </table></div>
+      <div class="empty hidden" id="bk-empty">No bookings match.</div></div>
+    </section>
+
+    <!-- PAYMENTS -->
+    <section class="view hidden" id="view-payments">
+      <div class="panel" style="padding-bottom:0;"><div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Ref</th><th>Guest</th><th>Method</th><th>Room Price</th><th>Down Payment (Paid)</th><th>Remaining Balance</th><th>Status</th></tr></thead>
+        <tbody id="pay-body"></tbody>
+      </table></div></div>
+      <div class="pay-foot-sticky">
+        <table class="tbl">
+          <tfoot id="pay-foot"></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- ROOMS -->
+    <section class="view hidden" id="view-rooms">
+      <div class="toolbar">
+        <button class="btn" id="room-save">Save changes</button>
+        <button class="btn ghost" id="room-add">+ Add room</button>
+        <span class="spacer"></span>
+        <button class="btn ghost" id="room-reset">Reset to defaults</button>
+      </div>
+      <div id="room-body"></div>
+      <p class="muted" style="margin-top:4px;">Changes apply to the Accommodations page and the room search on Booking. Unchecking "Available" hides a room from both. Photos are stored in this browser only.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="view hidden" id="view-gallery">
+      <div class="toolbar" style="flex-wrap:wrap; gap:10px;">
+        <button class="btn" id="gallery-save">Save Gallery</button>
+        <button class="btn ghost" id="gallery-add">+ Add Picture</button>
+        <select id="admin-gal-filter" style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:600; padding:10px 16px; border:1px solid var(--border); border-radius:24px; background:#fff; color:var(--navy); cursor:pointer;">
+          <option value="all">All Categories (Resort, Rooms, Pool, Garden)</option>
+          <option value="resort">Resort Only</option>
+          <option value="rooms">Rooms Only</option>
+          <option value="pool">Pool Only</option>
+          <option value="garden">Garden Only</option>
+        </select>
+        <span class="spacer"></span>
+        <button class="btn ghost danger" id="gallery-reset" style="color:var(--red); border-color:#ffcdd2;">Delete All</button>
+      </div>
+      <div id="gallery-body" class="gal-grid"></div>
+      <p class="muted" style="margin-top:16px;">Customize pictures for each gallery category: <b>Resort</b>, <b>Rooms</b>, <b>Pool</b>, and <b>Garden</b>. Upload any image format (.jpg, .png, .heic, .webp, .svg, etc.). Click <b>Save Gallery</b> to publish your changes to the live website.</p>
+    </section>
+
+    <!-- GUESTS -->
+    <section class="view hidden" id="view-users">
+      <div class="panel"><div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Bookings</th><th></th></tr></thead>
+        <tbody id="user-body"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div id="drawer-backdrop" class="drawer-backdrop"></div>
+<div id="modal" class="hidden"><div class="modal-card"><button class="modal-x" id="modal-x" aria-label="Close">&times;</button><h3 id="modal-title"></h3><div id="modal-body"></div></div></div>
+<div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body></html>

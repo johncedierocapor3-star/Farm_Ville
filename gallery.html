@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Farmville Resort</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<header class="site">
+  <div class="header-inner">
+  <a href="index.html" class="logo">
+    <img src="images/farmville-logo.png" alt="FarmVille logo">
+    <div><div class="word">FarmVille</div><div class="sub">Resort</div></div>
+  </a>
+  <nav class="links"><a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="accommodations.html">Accommodations</a>
+<a href="gallery.html" class="active">Gallery</a></nav>
+  <div class="header-actions"><span class="auth-area" id="auth-area"></span></div>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><h1>Resort Gallery</h1><p>A look into the quiet corners and golden mornings that make Farmville home.</p></section>
+<section class="wrap">
+<div class="tabs" id="gallery-tabs">
+  <button class="active" data-filter="all" onclick="filterGallery('all')">All</button>
+  <button data-filter="resort" onclick="filterGallery('resort')">Resort</button>
+  <button data-filter="rooms" onclick="filterGallery('rooms')">Rooms</button>
+  <button data-filter="pool" onclick="filterGallery('pool')">Pool</button>
+  <button data-filter="garden" onclick="filterGallery('garden')">Garden</button>
+</div>
+<div class="masonry" id="masonry">
+  <img src="https://picsum.photos/seed/gallery-1/500/650" data-category="resort" alt="resort photo"><img src="https://picsum.photos/seed/gallery-2/500/400" data-category="rooms" alt="rooms photo"><img src="https://picsum.photos/seed/gallery-3/500/650" data-category="pool" alt="pool photo"><img src="https://picsum.photos/seed/gallery-4/500/400" data-category="garden" alt="garden photo"><img src="https://picsum.photos/seed/gallery-5/500/400" data-category="garden" alt="garden photo"><img src="https://picsum.photos/seed/gallery-6/500/650" data-category="resort" alt="resort photo"><img src="https://picsum.photos/seed/gallery-7/500/400" data-category="pool" alt="pool photo"><img src="https://picsum.photos/seed/gallery-8/500/400" data-category="resort" alt="resort photo"><img src="https://picsum.photos/seed/gallery-9/500/400" data-category="rooms" alt="rooms photo"><img src="https://picsum.photos/seed/gallery-10/500/400" data-category="pool" alt="pool photo"><img src="https://picsum.photos/seed/gallery-11/500/650" data-category="garden" alt="garden photo"><img src="https://picsum.photos/seed/gallery-12/500/400" data-category="rooms" alt="rooms photo">
+</div>
+<p id="gallery-empty" class="hidden" style="text-align:center;color:var(--muted);padding:40px 0;">No photos in this category yet.</p>
+</section>
+
+</main>
+<footer class="site">
+  <div class="footer-inner">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/farmville-logo.png" alt="FarmVille Logo"><span>FarmVille Resort</span></a>
+      <p class="brand-blurb">A wilderness retreat where luxury meets nature, tucked in 250 protected acres of forest valley.</p>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="accommodations.html">Our Suites</a></li>
+      <li><a href="about.html">The Farm</a></li>
+    </ul></div>
+    <div><h5>Information</h5><ul>
+      <li><a href="#" data-info="policies">Resort Policies</a></li>
+      <li><a href="#" data-info="health">Health &amp; Safety</a></li>
+      <li><a href="#" data-info="careers">Careers</a></li>
+      <li><a href="#" data-info="contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Contact Us</h5><ul class="contact-list">
+      <li><a href="https://www.google.com/maps/search/?api=1&query=104+Forest+Eco+Road%2C+Hills+Valley%2C+CA+90210" target="_blank" rel="noopener" title="Open in Google Maps"><span class="ci">📍</span><span>104 Forest Eco Road, Hills Valley, CA 90210</span></a></li>
+      <li><a href="mailto:stay@farmvilleresort.com" title="Send us an email"><span class="ci">✉️</span><span>stay@farmvilleresort.com</span></a></li>
+      <li><a href="tel:+15557643232" title="Call us"><span class="ci">📞</span><span>+1 (555) 764-3232</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Farmville Resort. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow us on Instagram">Instagram ↗</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow us on Facebook">Facebook ↗</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<div class="info-modal hidden" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="info-card">
+    <button class="info-close" id="info-close" aria-label="Close">&times;</button>
+    <h3 id="info-title"></h3>
+    <div id="info-body"></div>
+  </div>
+</div>
+<div class="mini-footer" id="mini-footer">
+  <img src="images/farmville-logo.png" alt="FarmVille logo">
+  <span>FarmVille Resort</span>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/site.js"></script>
+</body></html>

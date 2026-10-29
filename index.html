@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Farmville Resort</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<header class="site">
+  <div class="header-inner">
+  <a href="index.html" class="logo">
+    <img src="images/farmville-logo.png" alt="FarmVille logo">
+    <div><div class="word">FarmVille</div><div class="sub">Resort</div></div>
+  </a>
+  <nav class="links"><a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="accommodations.html">Accommodations</a>
+<a href="gallery.html">Gallery</a></nav>
+  <div class="header-actions"><span class="auth-area" id="auth-area"></span></div>
+  </div>
+</header>
+<main>
+
+<section class="hero" style="background-image:url('https://picsum.photos/seed/farmville-hero/1600/700'); padding-top:70px;">
+  <h1>Escape to Farmville Resort</h1>
+  <p>Wake up to birdsong, sleep under stars — a wilderness sanctuary where every stay restores you.</p>
+  <div class="hero-actions">
+    <a href="booking.html" class="btn btn-primary">Book Your Stay</a>
+    <a href="about.html" class="btn btn-outline">Explore Resort</a>
+  </div>
+</section>
+<div class="wrap">
+<div class="booking-bar">
+  <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
+  <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
+  <div class="field"><label>Guests</label><input type="number" id="guests" min="1" max="10" value="2"></div>
+  <div class="field"><label>Room Type</label>
+    <select id="room-type">
+      <option value="all">All Types</option>
+      <option value="standard">Standard Room</option>
+      <option value="deluxe">Deluxe Cabin</option>
+      <option value="suite">Forest Suite</option>
+      <option value="villa">Family Villa</option>
+      <option value="cottage">Glass Cottage</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" onclick="searchFromHome()" style="align-self:flex-end;">Search Availability</button>
+</div>
+<p class="error-text" id="search-error" style="text-align:center; margin-top:10px;"></p>
+</div>
+
+<section class="two-col wrap">
+  <div>
+    <span class="eyebrow" style="text-align:left;">About Farmville</span>
+    <h2>Where Luxury Meets Wild Ground</h2>
+    <p>Nestled deep in 250 acres of protected valley, Farmville Resort blends handcrafted comfort with untouched wilderness.</p>
+    <p>Every cabin is solar-insulated and built from reclaimed timber, so your comfort never costs the forest around you.</p>
+    <a href="about.html" class="btn btn-primary">Learn Our Story</a>
+  </div>
+  <img src="https://picsum.photos/seed/farmville-about/800/700" alt="Farmville lodge exterior">
+</section>
+
+<section style="background:var(--cream);">
+  <span class="eyebrow">The Lodgings</span>
+  <h2>Our Featured Accommodations</h2>
+  <p class="lead">Handpicked stays for every kind of traveler, from solo wanderers to family reunions.</p>
+  <div class="wrap grid g3">
+    <div class="card"><img src="https://picsum.photos/seed/room-2/500/400"><div class="body">
+      <div class="row"><h3>Standard Room</h3><span class="price">₱180</span></div>
+      <p>Cozy cabin comfort with valley views.</p>
+      <div class="meta"><span>👥 2 Guests</span><a href="accommodations.html">View Details →</a></div>
+    </div></div>
+    <div class="card"><img src="https://picsum.photos/seed/room-3/500/400"><div class="body">
+      <div class="row"><h3>Deluxe Cabin</h3><span class="price">₱290</span></div>
+      <p>Spacious cabin with private deck.</p>
+      <div class="meta"><span>👥 2 Guests</span><a href="accommodations.html">View Details →</a></div>
+    </div></div>
+    <div class="card"><img src="https://picsum.photos/seed/room-4/500/400"><div class="body">
+      <div class="row"><h3>Family Villa</h3><span class="price">₱420</span></div>
+      <p>Room for the whole family to unwind.</p>
+      <div class="meta"><span>👥 2 Guests</span><a href="accommodations.html">View Details →</a></div>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Resort Experiences</span>
+  <h2>Unmatched Natural Amenities</h2>
+  <p class="lead">Everything you need to slow down and reconnect, all just steps from your door.</p>
+  <div class="wrap grid g4">
+    <div class="amenity"><div class="icon">💧</div><div><h4>Geothermal Pool</h4><p>Mineral-rich spring water kept warm naturally.</p></div></div>
+    <div class="amenity"><div class="icon">🌿</div><div><h4>The Greenhouse</h4><p>Organic dining, farm-to-table daily menus.</p></div></div>
+    <div class="amenity"><div class="icon">🔥</div><div><h4>Forest Firepits</h4><p>Fresh firewood lit daily under northern stars.</p></div></div>
+    <div class="amenity"><div class="icon">🧭</div><div><h4>Eco-Trails</h4><p>Miles of private protected valley hiking paths.</p></div></div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <span class="eyebrow">Moments</span>
+  <h2>Our Nature Chronicle</h2>
+  <div class="wrap masonry">
+    <img src="https://picsum.photos/seed/moment-1/500/650"><img src="https://picsum.photos/seed/moment-2/500/300">
+    <img src="https://picsum.photos/seed/moment-3/500/300"><img src="https://picsum.photos/seed/moment-4/500/300">
+    <img src="https://picsum.photos/seed/moment-5/500/300">
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2>Ready to Step Into Peace?</h2>
+  <p>Your forest cabin is waiting. Reserve today and start counting down to quiet mornings.</p>
+  <a href="booking.html" class="btn btn-outline" style="background:#fff;">Reserve Your Forest Cabin</a>
+</section>
+
+</main>
+<footer class="site">
+  <div class="footer-inner">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/farmville-logo.png" alt="FarmVille Logo"><span>FarmVille Resort</span></a>
+      <p class="brand-blurb">A wilderness retreat where luxury meets nature, tucked in 250 protected acres of forest valley.</p>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="accommodations.html">Our Suites</a></li>
+      <li><a href="about.html">The Farm</a></li>
+    </ul></div>
+    <div><h5>Information</h5><ul>
+      <li><a href="#" data-info="policies">Resort Policies</a></li>
+      <li><a href="#" data-info="health">Health &amp; Safety</a></li>
+      <li><a href="#" data-info="careers">Careers</a></li>
+      <li><a href="#" data-info="contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Contact Us</h5><ul class="contact-list">
+      <li><a href="https://www.google.com/maps/search/?api=1&query=104+Forest+Eco+Road%2C+Hills+Valley%2C+CA+90210" target="_blank" rel="noopener" title="Open in Google Maps"><span class="ci">📍</span><span>104 Forest Eco Road, Hills Valley, CA 90210</span></a></li>
+      <li><a href="mailto:stay@farmvilleresort.com" title="Send us an email"><span class="ci">✉️</span><span>stay@farmvilleresort.com</span></a></li>
+      <li><a href="tel:+15557643232" title="Call us"><span class="ci">📞</span><span>+1 (555) 764-3232</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Farmville Resort. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow us on Instagram">Instagram ↗</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow us on Facebook">Facebook ↗</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<div class="info-modal hidden" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="info-card">
+    <button class="info-close" id="info-close" aria-label="Close">&times;</button>
+    <h3 id="info-title"></h3>
+    <div id="info-body"></div>
+  </div>
+</div>
+<div class="mini-footer" id="mini-footer">
+  <img src="images/farmville-logo.png" alt="FarmVille logo">
+  <span>FarmVille Resort</span>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+</body></html>

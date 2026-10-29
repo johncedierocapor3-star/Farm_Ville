@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment | Farmville Resort</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<header class="site">
+  <div class="header-inner">
+  <a href="index.html" class="logo">
+    <img src="images/farmville-logo.png" alt="FarmVille logo">
+    <div><div class="word">FarmVille</div><div class="sub">Resort</div></div>
+  </a>
+  <nav class="links"><a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="accommodations.html">Accommodations</a>
+<a href="gallery.html">Gallery</a></nav>
+  <div class="header-actions"><span class="auth-area" id="auth-area"></span></div>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><h1>Complete Your Payment</h1><p>Secure your cabin with a 30% down payment. The balance is due at check-in.</p></section>
+
+<section id="pay-section" class="wrap">
+  <div class="pay-grid">
+    <div>
+      <form id="pay-form" class="pay-form" onsubmit="event.preventDefault(); confirmPayment();">
+
+        <div class="pay-panel">
+          <div class="pay-panel-head"><span class="step-badge">1</span><h4>Your Details</h4></div>
+          <label>Full Name</label><input type="text" id="g-name" placeholder="Enter your full name">
+          <div class="pay-row">
+            <div><label>Email</label><input type="email" id="g-email" placeholder="Enter your email address"></div>
+            <div><label>Phone</label><input type="text" id="g-phone" placeholder="Enter your phone number"></div>
+          </div>
+        </div>
+
+        <div class="pay-panel">
+          <div class="pay-panel-head"><span class="step-badge">2</span><h4>Payment Method</h4></div>
+          <div class="pay-method-tabs">
+            <button type="button" data-method="card" class="active" onclick="switchMethod('card')"><span class="pm-icon"><img src="images/payment-logos-transparent.png" alt="Card payments"></span><span>Card</span></button>
+            <button type="button" data-method="gcash" onclick="switchMethod('gcash')"><span class="pm-icon"><img src="images/gcash-logo-png_seeklogo-498022.webp" alt="Online Payment"></span><span>Online Payment</span></button>
+          </div>
+
+          <div class="pay-fields" data-method="card">
+            <label>Name on Card</label><input type="text" id="cc-name" placeholder="Enter the name on your card">
+            <label>Card Number</label><input type="text" id="cc-number" placeholder="Enter your card number" oninput="formatCardNumber(event)">
+            <div class="pay-row">
+              <div><label>Expiry (MM/YY)</label><input type="text" id="cc-expiry" placeholder="Enter expiry date" oninput="formatExpiry(event)"></div>
+              <div><label>CVV</label><input type="text" id="cc-cvv" placeholder="Enter CVV" oninput="formatCVV(event)"></div>
+            </div>
+          </div>
+          <div class="pay-fields hidden" data-method="gcash">
+            <label>GCash Mobile Number</label><input type="text" id="gcash-number" placeholder="Enter your GCash mobile number" oninput="formatMobile(event)">
+            <p class="notice">You'll receive a GCash payment request for the down payment amount shown. Confirm it in your GCash app.</p>
+          </div>
+        </div>
+
+        <p class="error-text" id="pay-error"></p>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;padding:16px;">🔒 Confirm Payment</button>
+        <p class="secure-note">🔒 Your information is used only to confirm this booking.</p>
+      </form>
+    </div>
+
+    <div class="summary-box">
+      <h3>Booking Summary</h3>
+      <div class="summary-line"><span>Room</span><span id="sum-room">—</span></div>
+      <div class="summary-line"><span>Dates</span><span id="sum-dates">—</span></div>
+      <div class="summary-line"><span>Guests</span><span id="sum-guests">—</span></div>
+      <div class="summary-line"><span>Room subtotal</span><span id="sum-subtotal">—</span></div>
+      <div class="summary-line"><span>Eco/resort fee (5%)</span><span id="sum-fee">—</span></div>
+      <div class="summary-line total"><span>Total Stay Cost</span><span id="sum-total">—</span></div>
+      <div class="summary-line down"><span>Down Payment Due Now (30%)</span><span id="sum-deposit">—</span></div>
+      <div class="summary-line"><span>Balance Due at Check-in</span><span id="sum-balance">—</span></div>
+    </div>
+  </div>
+</section>
+
+<script src="js/payment.js"></script>
+
+</main>
+<footer class="site">
+  <div class="footer-inner">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/farmville-logo.png" alt="FarmVille Logo"><span>FarmVille Resort</span></a>
+      <p class="brand-blurb">A wilderness retreat where luxury meets nature, tucked in 250 protected acres of forest valley.</p>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="accommodations.html">Our Suites</a></li>
+      <li><a href="about.html">The Farm</a></li>
+    </ul></div>
+    <div><h5>Information</h5><ul>
+      <li><a href="#" data-info="policies">Resort Policies</a></li>
+      <li><a href="#" data-info="health">Health &amp; Safety</a></li>
+      <li><a href="#" data-info="careers">Careers</a></li>
+      <li><a href="#" data-info="contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Contact Us</h5><ul class="contact-list">
+      <li><a href="https://www.google.com/maps/search/?api=1&query=104+Forest+Eco+Road%2C+Hills+Valley%2C+CA+90210" target="_blank" rel="noopener" title="Open in Google Maps"><span class="ci">📍</span><span>104 Forest Eco Road, Hills Valley, CA 90210</span></a></li>
+      <li><a href="mailto:stay@farmvilleresort.com" title="Send us an email"><span class="ci">✉️</span><span>stay@farmvilleresort.com</span></a></li>
+      <li><a href="tel:+15557643232" title="Call us"><span class="ci">📞</span><span>+1 (555) 764-3232</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Farmville Resort. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow us on Instagram">Instagram ↗</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow us on Facebook">Facebook ↗</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<div class="info-modal hidden" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="info-card">
+    <button class="info-close" id="info-close" aria-label="Close">&times;</button>
+    <h3 id="info-title"></h3>
+    <div id="info-body"></div>
+  </div>
+</div>
+<div class="mini-footer" id="mini-footer">
+  <img src="images/farmville-logo.png" alt="FarmVille logo">
+  <span>FarmVille Resort</span>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+</body></html>

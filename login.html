@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login | Farmville Resort</title>
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<div class="auth-bg"></div><div class="auth-overlay"></div>
+<a href="admin-login.html" class="corner-logo" title="Go to Admin Portal" aria-label="Go to Admin Portal">
+  <img src="images/farmville-logo.png" alt="FarmVille Logo">
+  <span>FarmVille</span>
+</a>
+<div class="auth-card">
+  <form id="login-form" novalidate>
+    <img class="auth-logo" src="images/farmville-logo.png" alt="Farmville Resort" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://www.figma.com/api/mcp/asset/ea27233b-f1a7-4e89-8957-a33591cc48cc/9fd63.png'}else{var d=document.createElement('div');d.className='logo-text';d.innerHTML='FARMVILLE<span>RESORT</span>';this.replaceWith(d)}">
+    <div class="fields">
+      <div class="field" id="f-l-id"><label for="l-id">Email Address</label><input id="l-id" type="text" placeholder="Enter your email address" autocomplete="username"><span class="err-msg"></span></div>
+      <div class="field" id="f-l-pw">
+        <label for="l-pw">Password</label>
+        <div class="input-wrap">
+          <input id="l-pw" type="password" placeholder="••••••••••••" autocomplete="current-password">
+          <button type="button" class="pw-toggle" data-for="l-pw" aria-label="Show password" title="Show password">🔒</button>
+        </div>
+        <span class="err-msg"></span>
+      </div>
+    </div>
+    <div class="opts">
+      <label class="check"><input type="checkbox" id="l-remember"> Remember me</label>
+      <a href="#" id="forgot-link">Forgot Password?</a>
+    </div>
+    <p class="form-msg" id="login-msg"></p>
+    <div class="actions">
+      <button class="btn-main" type="submit">Sign In</button>
+      <p class="alt">Don't have an account? <a href="register.html">Create one</a></p>
+    </div>
+  </form>
+</div>
+<script src="js/auth.js"></script>
+</body></html>

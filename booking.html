@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Your Stay | Farmville Resort</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<header class="site">
+  <div class="header-inner">
+  <a href="index.html" class="logo">
+    <img src="images/farmville-logo.png" alt="FarmVille logo">
+    <div><div class="word">FarmVille</div><div class="sub">Resort</div></div>
+  </a>
+  <nav class="links"><a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="accommodations.html">Accommodations</a>
+<a href="gallery.html">Gallery</a></nav>
+  <div class="header-actions"><span class="auth-area" id="auth-area"></span></div>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><h1>Find Your Perfect Stay</h1><p>Check real availability and see live pricing for your dates.</p></section>
+
+<div class="wrap">
+<div class="booking-bar" style="margin-top:-30px;">
+  <div class="field"><label>Check-in</label><input type="date" id="checkin"></div>
+  <div class="field"><label>Check-out</label><input type="date" id="checkout"></div>
+  <div class="field"><label>Guests</label><input type="number" id="guests" min="1" max="10" value="2"></div>
+  <div class="field"><label>Room Type</label>
+    <select id="room-type">
+      <option value="all">All Types</option>
+      <option value="standard">Standard Room</option>
+      <option value="deluxe">Deluxe Cabin</option>
+      <option value="suite">Forest Suite</option>
+      <option value="villa">Family Villa</option>
+      <option value="cottage">Glass Cottage</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" onclick="runSearch()" style="align-self:flex-end;">Search Availability</button>
+</div>
+<p class="error-text" id="search-error"></p>
+</div>
+
+<!-- SEARCH RESULTS -->
+<section id="results-section" class="wrap hidden">
+  <h2 id="results-title" style="text-align:left;font-size:22px;margin-bottom:24px;">Available Lodgings</h2>
+  <div class="result-list" id="result-list"></div>
+</section>
+
+<script src="js/booking.js"></script>
+
+</main>
+<footer class="site">
+  <div class="footer-inner">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/farmville-logo.png" alt="FarmVille Logo"><span>FarmVille Resort</span></a>
+      <p class="brand-blurb">A wilderness retreat where luxury meets nature, tucked in 250 protected acres of forest valley.</p>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="accommodations.html">Our Suites</a></li>
+      <li><a href="about.html">The Farm</a></li>
+    </ul></div>
+    <div><h5>Information</h5><ul>
+      <li><a href="#" data-info="policies">Resort Policies</a></li>
+      <li><a href="#" data-info="health">Health &amp; Safety</a></li>
+      <li><a href="#" data-info="careers">Careers</a></li>
+      <li><a href="#" data-info="contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Contact Us</h5><ul class="contact-list">
+      <li><a href="https://www.google.com/maps/search/?api=1&query=104+Forest+Eco+Road%2C+Hills+Valley%2C+CA+90210" target="_blank" rel="noopener" title="Open in Google Maps"><span class="ci">📍</span><span>104 Forest Eco Road, Hills Valley, CA 90210</span></a></li>
+      <li><a href="mailto:stay@farmvilleresort.com" title="Send us an email"><span class="ci">✉️</span><span>stay@farmvilleresort.com</span></a></li>
+      <li><a href="tel:+15557643232" title="Call us"><span class="ci">📞</span><span>+1 (555) 764-3232</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Farmville Resort. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow us on Instagram">Instagram ↗</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow us on Facebook">Facebook ↗</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<div class="info-modal hidden" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="info-card">
+    <button class="info-close" id="info-close" aria-label="Close">&times;</button>
+    <h3 id="info-title"></h3>
+    <div id="info-body"></div>
+  </div>
+</div>
+<div class="mini-footer" id="mini-footer">
+  <img src="images/farmville-logo.png" alt="FarmVille logo">
+  <span>FarmVille Resort</span>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+</body></html>

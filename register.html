@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Account | Farmville Resort</title>
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<div class="auth-bg"></div><div class="auth-overlay"></div>
+<a href="admin-login.html" class="corner-logo" title="Go to Admin Portal" aria-label="Go to Admin Portal">
+  <img src="images/farmville-logo.png" alt="FarmVille Logo">
+  <span>FarmVille</span>
+</a>
+<div class="auth-card wide">
+  <form id="register-form" novalidate>
+    <img class="auth-logo" src="images/farmville-logo.png" alt="Farmville Resort" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://www.figma.com/api/mcp/asset/ea27233b-f1a7-4e89-8957-a33591cc48cc/9fd63.png'}else{var d=document.createElement('div');d.className='logo-text';d.innerHTML='FARMVILLE<span>RESORT</span>';this.replaceWith(d)}">
+    <div class="fields">
+      <div class="field" id="f-r-name"><label for="r-name">Full Name</label><input id="r-name" type="text" placeholder="Enter your full name" autocomplete="name"><span class="err-msg"></span></div>
+      <div class="field" id="f-r-email"><label for="r-email">Email Address</label><input id="r-email" type="email" placeholder="Enter your email address" autocomplete="email"><span class="err-msg"></span></div>
+      <div class="field" id="f-r-phone"><label for="r-phone">Phone Number</label><input id="r-phone" type="tel" placeholder="Enter your mobile number" autocomplete="tel"><span class="err-msg"></span></div>
+      <div class="row2">
+        <div class="field" id="f-r-pw">
+          <label for="r-pw">Password</label>
+          <div class="input-wrap">
+            <input id="r-pw" type="password" placeholder="••••••••" autocomplete="new-password">
+            <button type="button" class="pw-toggle" data-for="r-pw" aria-label="Show password" title="Show password">🔒</button>
+          </div>
+          <span class="err-msg"></span>
+        </div>
+        <div class="field" id="f-r-pw2">
+          <label for="r-pw2">Confirm Password</label>
+          <div class="input-wrap">
+            <input id="r-pw2" type="password" placeholder="••••••••" autocomplete="new-password">
+            <button type="button" class="pw-toggle" data-for="r-pw2" aria-label="Show password" title="Show password">🔒</button>
+          </div>
+          <span class="err-msg"></span>
+        </div>
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" id="r-terms"> I agree to the Terms of Service &amp; Privacy Policy</label>
+    <p class="form-msg" id="reg-msg"></p>
+    <div class="actions">
+      <button class="btn-main" type="submit">Create Account</button>
+      <p class="alt">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </form>
+</div>
+<script src="js/auth.js"></script>
+</body></html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accommodations | Farmville Resort</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap_reponsive.css">
+</head><body>
+<header class="site">
+  <div class="header-inner">
+  <a href="index.html" class="logo">
+    <img src="images/farmville-logo.png" alt="FarmVille logo">
+    <div><div class="word">FarmVille</div><div class="sub">Resort</div></div>
+  </a>
+  <nav class="links"><a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="accommodations.html" class="active">Accommodations</a>
+<a href="gallery.html">Gallery</a></nav>
+  <div class="header-actions"><span class="auth-area" id="auth-area"></span></div>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><h1>Our Accommodations</h1><p>From solo cabins to family villas — find the stay that fits your escape.</p></section>
+<div class="wrap">
+<div class="booking-bar" style="margin-top:-30px;">
+  <div class="field">
+    <label for="filter-type">Type:</label>
+    <select id="filter-type">
+      <option value="all">All Lodgings</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="filter-guests">Guests:</label>
+    <select id="filter-guests">
+      <option value="all">Any Capacity</option>
+      <option value="1">1+ Guest</option>
+      <option value="2">2+ Guests</option>
+      <option value="4">4+ Guests</option>
+      <option value="6">6+ Guests</option>
+      <option value="8">8+ Guests</option>
+      <option value="10">10+ Guests</option>
+      <option value="15">15+ Guests</option>
+      <option value="20">20+ Guests</option>
+      <option value="25">25+ Guests</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="filter-price">Price Range:</label>
+    <select id="filter-price">
+      <option value="all">All Prices</option>
+      <option value="under-250">Under ₱250</option>
+      <option value="250-500">₱250 - ₱500</option>
+      <option value="500-750">₱500 - ₱750</option>
+      <option value="750-1000">₱750 - ₱1,000</option>
+      <option value="1000-plus">₱1,000+</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" id="filter-btn" style="align-self:flex-end;">Filter Results</button>
+</div>
+</div>
+<div class="wrap" id="filter-details-wrap" style="display:none; margin-top:20px; margin-bottom:10px;">
+  <div id="filter-details-box" style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 20px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+      <span id="filter-count-badge" style="background:var(--forest); color:#fff; font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px;">0 Available</span>
+      <span style="color:var(--muted); font-size:13px;">Selected Details:</span>
+      <span id="filter-chip-type" style="background:#f1f5f9; color:var(--navy); font-size:12px; font-weight:600; padding:4px 10px; border-radius:16px;">Type: All</span>
+      <span id="filter-chip-guests" style="background:#f1f5f9; color:var(--navy); font-size:12px; font-weight:600; padding:4px 10px; border-radius:16px;">Capacity: Any</span>
+      <span id="filter-chip-price" style="background:#f1f5f9; color:var(--navy); font-size:12px; font-weight:600; padding:4px 10px; border-radius:16px;">Price: All</span>
+    </div>
+    <button class="btn btn-outline" onclick="resetFilters()" style="padding:6px 14px; font-size:12px;">Reset</button>
+  </div>
+</div>
+<section class="wrap grid g3" id="room-grid"></section>
+
+<!-- Room booking confirmation modal (separate from the shared info modal) -->
+<div class="info-modal hidden" id="room-book-modal" role="dialog" aria-modal="true">
+  <div class="info-card">
+    <button class="info-close" id="room-book-close" aria-label="Close">&times;</button>
+    <h3 id="room-book-title"></h3>
+    <div id="room-book-body"></div>
+  </div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="footer-inner">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/farmville-logo.png" alt="FarmVille Logo"><span>FarmVille Resort</span></a>
+      <p class="brand-blurb">A wilderness retreat where luxury meets nature, tucked in 250 protected acres of forest valley.</p>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="accommodations.html">Our Suites</a></li>
+      <li><a href="about.html">The Farm</a></li>
+    </ul></div>
+    <div><h5>Information</h5><ul>
+      <li><a href="#" data-info="policies">Resort Policies</a></li>
+      <li><a href="#" data-info="health">Health &amp; Safety</a></li>
+      <li><a href="#" data-info="careers">Careers</a></li>
+      <li><a href="#" data-info="contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Contact Us</h5><ul class="contact-list">
+      <li><a href="https://www.google.com/maps/search/?api=1&query=104+Forest+Eco+Road%2C+Hills+Valley%2C+CA+90210" target="_blank" rel="noopener" title="Open in Google Maps"><span class="ci">📍</span><span>104 Forest Eco Road, Hills Valley, CA 90210</span></a></li>
+      <li><a href="mailto:stay@farmvilleresort.com" title="Send us an email"><span class="ci">✉️</span><span>stay@farmvilleresort.com</span></a></li>
+      <li><a href="tel:+15557643232" title="Call us"><span class="ci">📞</span><span>+1 (555) 764-3232</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Farmville Resort. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow us on Instagram">Instagram ↗</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow us on Facebook">Facebook ↗</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<div class="info-modal hidden" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="info-card">
+    <button class="info-close" id="info-close" aria-label="Close">&times;</button>
+    <h3 id="info-title"></h3>
+    <div id="info-body"></div>
+  </div>
+</div>
+<div class="mini-footer" id="mini-footer">
+  <img src="images/farmville-logo.png" alt="FarmVille logo">
+  <span>FarmVille Resort</span>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/accommodations.js"></script>
+<script src="js/site.js"></script>
+</body></html>
